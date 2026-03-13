@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dataset Kesehatan Janin</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+margin:0;
+background:#111;
+color:white;
+}
+
+h1,p{
+color:white;
+}
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.tabs button{
+padding:10px 20px;
+background:#3f51b5;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+.tabs button.active{
+background:#2c3e50;
+}
+
+.tab-content{
+display:none;
+overflow-x:auto;
+}
+
+.tab-content.active{
+display:block;
+}
+
+table{
+width:100%;
+max-width:1600px;
+margin:auto;
+border-collapse:collapse;
+background:#111;
+color:white;
+}
+
+th,td{
+padding:8px;
+border:1px solid #333;
+color:white;
+}
+
+th{
+background:#3f51b5;
+color:white;
+}
+
+tr:nth-child(even) td{
+background:#222;
+}
+
+tr:nth-child(odd) td{
+background:#333;
+}
+
+.row-number{
+text-align:center;
+font-weight:bold;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Dataset Kesehatan Janin</h1>
+
+<p><b>Jumlah Dataset Asli:</b> {{raw_count}}</p>
+<p><b>Jumlah Kolom Asli:</b> {{raw_col_count}}</p>
+<p><b>Jumlah Dataset Setelah Preprocessing:</b> {{processed_count}}</p>
+<p><b>Jumlah Kolom Setelah Preprocessing:</b> {{processed_col_count}}</p>
+<p><b>Jumlah Data Duplikat:</b> {{duplicate_count}}</p>
+
+<div class="tabs">
+<button class="active" data-target="raw">Dataset Asli</button>
+<button data-target="processed">Dataset Preprocessing</button>
+</div>
+
+<div id="raw" class="tab-content active">
+
+<table>
+
+<thead>
+
+<tr>
+<th>No</th>
+
+{% for col in header %}
+<th>{{col}}</th>
+{% endfor %}
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in raw_rows %}
+
+<tr>
+
+<td class="row-number">{{loop.index}}</td>
+
+{% for cell in row %}
+<td>{{cell}}</td>
+{% endfor %}
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<div id="processed" class="tab-content">
+
+<table>
+
+<thead>
+
+<tr>
+<th>No</th>
+
+{% for col in processed_header %}
+<th>{{col}}</th>
+{% endfor %}
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in processed_rows %}
+
+<tr>
+
+<td class="row-number">{{loop.index}}</td>
+
+{% for cell in row %}
+<td>{{cell}}</td>
+{% endfor %}
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+const buttons=document.querySelectorAll(".tabs button")
+const contents=document.querySelectorAll(".tab-content")
+
+buttons.forEach(btn=>{
+
+btn.onclick=()=>{
+
+buttons.forEach(b=>b.classList.remove("active"))
+contents.forEach(c=>c.classList.remove("active"))
+
+btn.classList.add("active")
+document.getElementById(btn.dataset.target).classList.add("active")
+
+}
+
+})
+
+</script>
+
+</body>
+</html>

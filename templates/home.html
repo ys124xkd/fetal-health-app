@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediksi Kesehatan Janin</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:justify;
+}
+
+/* HEADER */
+header{
+    background:#3f51b5;
+    padding:20px;
+    text-align:center;
+    color:white;
+    border-radius:10px;
+}
+
+header img{
+    height:40px;
+    vertical-align:middle;
+    margin-right:10px;
+}
+
+h1{
+    font-size:26px;
+    display:inline;
+}
+
+/* MAIN CONTENT */
+main{
+    max-width:1700px;
+    margin:30px auto;
+    padding:0 30px;
+}
+
+/* SECTION */
+section{
+    margin-bottom:30px;
+}
+
+/* TITLE */
+h2{
+    font-size:22px;
+    border-bottom:3px solid #00bcd4;
+    padding-bottom:5px;
+    margin-top:10px;
+    display:inline-block;
+}
+
+/* TEXT */
+p,li{
+    font-size:17px;
+    line-height:1.8;
+    text-align:justify;
+}
+
+/* LIST */
+ul{
+    padding-left:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Prediksi Kesehatan Janin</h1>
+</header>
+
+<main>
+
+<section>
+<h2>Latar Belakang</h2>
+
+<p>
+Kesehatan janin merupakan faktor krusial yang menentukan kelangsungan hidup bayi serta kesejahteraan ibu selama masa kehamilan. Deteksi dini terhadap gangguan kesehatan janin sangat penting untuk intervensi medis yang tepat waktu. Salah satu metode yang digunakan untuk memantau kondisi janin adalah kardiotokografi (CTG), yang merekam aktivitas detak jantung janin dan kontraksi rahim ibu. Analisis data CTG ini dilakukan oleh tenaga medis untuk menilai kondisi janin apakah normal, mencurigakan, atau patologis. Namun, interpretasi manual dapat memakan waktu dan bersifat subjektif.
+</p>
+
+<p>
+Teknologi machine learning menawarkan solusi untuk meningkatkan akurasi dan efisiensi dalam analisis data CTG. Dengan melatih algoritma menggunakan dataset CTG, sistem berbasis machine learning dapat mengidentifikasi pola tersembunyi dan mengklasifikasikan kondisi kesehatan janin secara otomatis dan konsisten. Penelitian ini menggunakan dataset “Fetal Health Classification” dari Kaggle, yang terdiri dari lebih dari 2.126 data CTG dengan label klasifikasi (Normal, Suspect, Pathological).
+</p>
+
+<p>
+Penelitian ini membandingkan performa tiga algoritma machine learning yaitu Naive Bayes, Decision Tree, dan Random Forest. Naive Bayes adalah algoritma probabilistik yang sederhana dan efisien, Decision Tree berbasis aturan yang mudah dianalisis, dan Random Forest merupakan metode ensemble yang menggabungkan beberapa pohon keputusan untuk meningkatkan akurasi serta mengurangi overfitting.
+</p>
+
+</section>
+
+
+<section>
+<h2>Rumusan Masalah</h2>
+
+<ul>
+<li>
+Bagaimana cara memanfaatkan dataset Fetal Health Classification untuk memprediksi tingkat kesehatan janin berdasarkan fitur pemeriksaan kardiotokografi (CTG) seperti baseline fetal heart rate, akselerasi, deselerasi, dan kontraksi uterus?
+</li>
+
+<li>
+Seberapa akurat algoritma Naive Bayes, Decision Tree, dan Random Forest dalam mengklasifikasikan tingkat kesehatan janin ke dalam kategori Normal, Suspect, atau Pathological?
+</li>
+
+<li>
+Algoritma machine learning manakah yang memberikan performa terbaik dalam klasifikasi kesehatan janin berdasarkan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score?
+</li>
+</ul>
+
+</section>
+
+
+<section>
+<h2>Tujuan Penelitian</h2>
+
+<ul>
+
+<li>
+Memprediksi tingkat kesehatan janin berdasarkan fitur-fitur kardiotokografi (CTG) seperti detak jantung dasar, akselerasi, deselerasi, dan kontraksi uterus untuk memahami kondisi janin secara dini dan lebih akurat.
+</li>
+
+<li>
+Menganalisis dan membandingkan efektivitas tiga algoritma machine learning yaitu Naive Bayes, Decision Tree, dan Random Forest dalam mengklasifikasikan tingkat kesehatan janin ke dalam kategori Normal, Suspect, dan Pathological guna menentukan algoritma yang paling optimal dalam mendukung pengambilan keputusan medis.
+</li>
+
+</ul>
+
+</section>
+
+
+<section>
+<h2>Manfaat Penelitian</h2>
+
+<ul>
+
+<li>
+Penelitian ini membantu pengembangan sistem deteksi dini yang lebih akurat untuk memantau kesehatan janin berdasarkan hasil pemeriksaan kardiotokografi (CTG), sehingga potensi masalah kesehatan pada janin dapat diidentifikasi lebih awal.
+</li>
+
+<li>
+Dengan memanfaatkan algoritma machine learning untuk klasifikasi kesehatan janin, penelitian ini dapat memberikan dukungan bagi tenaga medis dalam mengambil keputusan yang lebih cepat dan tepat sehingga risiko komplikasi pada kehamilan dapat dikurangi.
+</li>
+
+<li>
+Penelitian ini juga memberikan wawasan mengenai faktor-faktor yang mempengaruhi kesehatan janin seperti pola detak jantung dan pergerakan janin sehingga dapat membantu dokter merancang perawatan yang lebih tepat.
+</li>
+
+</ul>
+
+</section>
+
+</main>
+
+</body>
+</html>
