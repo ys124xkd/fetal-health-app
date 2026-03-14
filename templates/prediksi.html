@@ -48,7 +48,7 @@ th { background:#555; color: #fff !important; }
 
 <script>
  window.onload = () => {
-  fetch("http://localhost:5000/features")
+  fetch("https://fetal-health-app-production.up.railway.app/features")
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById('input-container');
@@ -124,7 +124,7 @@ th { background:#555; color: #fff !important; }
     }
   });
 
-  fetch("http://localhost:5000/predict", {
+  fetch("https://fetal-health-app-production.up.railway.app/predict", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input)
