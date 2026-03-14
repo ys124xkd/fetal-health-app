@@ -214,3 +214,21 @@ Dengan demikian, model **Random Forest** dipilih sebagai model utama yang diguna
 
 ---
 
+## Tampilan Website
+
+Aplikasi ini menyediakan antarmuka web yang memudahkan pengguna untuk melihat dataset serta melakukan prediksi kondisi kesehatan janin secara langsung melalui browser.
+
+### Halaman Dataset
+
+Halaman **Dataset** menampilkan informasi mengenai dataset yang digunakan dalam penelitian ini. Pada halaman ini pengguna dapat melihat struktur data serta beberapa fitur yang digunakan dalam proses klasifikasi kesehatan janin.
+
+![Halaman Dataset](assets/dataset_page.png)
+
+---
+
+### Halaman Prediction
+
+Halaman **Prediction** digunakan untuk melakukan prediksi kondisi kesehatan janin. Pengguna dapat memasukkan nilai parameter **Cardiotocography (CTG)** pada form yang tersedia, kemudian sistem akan memproses data tersebut menggunakan model machine learning dan menampilkan hasil prediksi.
+
+![Halaman Prediction](assets/prediction_page.png)
+
