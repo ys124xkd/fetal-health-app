@@ -200,7 +200,7 @@ Berikut merupakan hasil evaluasi model **Random Forest** yang ditampilkan dalam 
 
 #### Confusion Matrix
 
-![Confusion Matrix Random Forest](assets/confusion_matrix_random_forest.png)
+![Confusion Matrix Random Forest](assets/confusion_matrix_rf.png)
 
 ---
 
