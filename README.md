@@ -99,9 +99,9 @@ Label pada dataset terdiri dari:
 
   Label   Keterangan
   ------- --------------
-  1       Normal
-  2       Suspect
-  3       Pathological
+  1.       Normal
+  2.      Suspect
+  3.       Pathological
 
 ## Instalasi
 
