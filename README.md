@@ -232,3 +232,34 @@ Halaman **Prediction** digunakan untuk melakukan prediksi kondisi kesehatan jani
 
 ![Halaman Prediction](assets/prediction_page.png)
 
+--------------------------------------------------
+
+## Contoh Hasil Prediksi
+
+Setelah pengguna memasukkan nilai parameter **Cardiotocography (CTG)** pada halaman prediction, sistem akan memproses data menggunakan model machine learning dan menampilkan hasil klasifikasi kondisi kesehatan janin.
+
+Berikut beberapa contoh hasil prediksi yang dihasilkan oleh sistem.
+
+### Prediksi Normal
+
+Hasil prediksi **Normal** menunjukkan bahwa kondisi kesehatan janin berada dalam keadaan baik dan tidak ditemukan indikasi gangguan berdasarkan parameter CTG yang dimasukkan.
+
+![Hasil Prediksi Normal](assets/prediksi_normal.png)
+
+---
+
+### Prediksi Suspect
+
+Hasil prediksi **Suspect** menunjukkan bahwa terdapat kemungkinan adanya kondisi yang perlu diperhatikan lebih lanjut. Pada kondisi ini biasanya diperlukan pemantauan tambahan oleh tenaga medis.
+
+![Hasil Prediksi Suspect](assets/prediksi_suspect.png)
+
+---
+
+### Prediksi Pathological
+
+Hasil prediksi **Pathological** menunjukkan bahwa terdapat indikasi kondisi kesehatan janin yang tidak normal sehingga memerlukan perhatian medis lebih lanjut.
+
+![Hasil Prediksi Pathological](assets/prediksi_pathological.png)
+
+---
