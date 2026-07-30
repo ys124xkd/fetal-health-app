@@ -1,245 +1,212 @@
-# Fetal Health Prediction App
+# 👶 Fetal Health Prediction App
 
-Aplikasi **Fetal Health Prediction** adalah aplikasi berbasis web yang
-digunakan untuk memprediksi kondisi kesehatan janin berdasarkan data
-**Cardiotocography (CTG)** menggunakan algoritma **Machine Learning**.
+Fetal Health Prediction App is a web-based application developed using **Python Flask** to predict fetal health conditions based on **Cardiotocography (CTG)** data. The application utilizes multiple **Machine Learning** algorithms to classify fetal health into **Normal**, **Suspect**, or **Pathological** conditions.
 
-Aplikasi ini dibangun menggunakan **Python Flask** sebagai backend dan
-memanfaatkan model machine learning untuk melakukan klasifikasi kondisi
-kesehatan janin.
+---
 
-## Deskripsi Proyek
+## 📖 Overview
 
-Cardiotocography (CTG) merupakan metode yang digunakan untuk memantau
-kondisi kesehatan janin selama masa kehamilan dengan mengukur detak
-jantung janin dan kontraksi rahim.
+Cardiotocography (CTG) is a medical technique used to monitor fetal well-being during pregnancy by recording fetal heart rate and uterine contractions.
 
-Melalui data CTG tersebut, model machine learning dapat digunakan untuk
-melakukan klasifikasi kondisi janin menjadi:
+This application enables users to enter CTG parameters through a web interface. The input data is processed using trained machine learning models to predict fetal health conditions, providing an early decision-support tool for healthcare analysis.
 
--   Normal
--   Suspect
--   Pathological
+---
 
-Aplikasi ini memungkinkan pengguna untuk memasukkan parameter CTG
-melalui form web, kemudian sistem akan memproses data tersebut
-menggunakan model machine learning dan menampilkan hasil prediksi
-kondisi kesehatan janin.
+## ✨ Features
 
-## Fitur Aplikasi
+- CTG data input through a web interface
+- Automatic fetal health prediction
+- Real-time classification results
+- Feature selection using **SelectKBest**
+- Comparison of multiple machine learning algorithms
+- Model performance evaluation
+- Flask-based web application
 
--   Input data CTG melalui web interface
--   Prediksi kondisi kesehatan janin
--   Menampilkan hasil klasifikasi secara langsung
--   Implementasi berbasis web menggunakan Flask
--   Feature selection menggunakan SelectKBest
--   Perbandingan beberapa model Machine Learning
+---
 
-## Teknologi yang Digunakan
+## 🤖 Machine Learning Algorithms
 
--   Python
--   Flask
--   Scikit-learn
--   Pandas
--   NumPy
--   HTML
--   CSS
+The project implements and compares the following classification algorithms:
 
-## Struktur Proyek
+- Decision Tree
+- Naive Bayes
+- Random Forest
 
-    fetal-health-app
-    │
-    ├── app.py
-    ├── README.md
-    ├── requirements.txt
-    │
-    ├── assets
-    │   └── gambar
-    │
-    ├── data
-    │   └── dataset
-    │
-    ├── templates
-    │   ├── index.html
-    │   ├── dataset.html
-    │   ├── prediksi.html
-    │   └── profile.html
-    │
-    ├── decision_tree_model.pkl
-    ├── naive_bayes_model.pkl
-    ├── random_forest_model.pkl
-    ├── model_accuracies.pkl
-    ├── rf_accuracy.pkl
-    │
-    ├── selected_features.json
-    └── selected_features.pkl
+Among these models, **Random Forest** achieved the best overall performance and was selected as the primary prediction model used in the application.
 
-## Dataset
+---
 
-Dataset yang digunakan adalah **Fetal Health Dataset** yang berasal dari
-rekaman **Cardiotocography (CTG)**.
+## 🛠️ Technologies
 
-Dataset memiliki beberapa fitur seperti:
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- NumPy
+- HTML
+- CSS
 
--   baseline value
--   accelerations
--   fetal movement
--   uterine contractions
--   light decelerations
--   severe decelerations
--   prolonged decelerations
--   abnormal short term variability
--   mean value of short term variability
--   percentage of time with abnormal long term variability
--   histogram mean
--   histogram median
--   histogram variance
+---
 
-Label pada dataset terdiri dari:
+## 📂 Project Structure
 
-  Label Keterangan
-  ------- --------------
-  1. Normal
-  2. Suspect
-  3. Pathological
+```text
+fetal-health-prediction/
+│
+├── app.py
+├── README.md
+├── requirements.txt
+│
+├── assets/
+├── data/
+├── templates/
+│
+├── decision_tree_model.pkl
+├── naive_bayes_model.pkl
+├── random_forest_model.pkl
+├── model_accuracies.pkl
+├── rf_accuracy.pkl
+│
+├── selected_features.json
+└── selected_features.pkl
+```
 
-## Instalasi
+---
 
-### 1. Clone Repository
+## 📊 Dataset
 
-    git clone https://github.com/username/fetal-health-app.git
-    cd fetal-health-app
+This project uses the **Fetal Health Dataset**, which is based on **Cardiotocography (CTG)** recordings.
 
-### 2. Membuat Virtual Environment (Opsional)
+The dataset includes features such as:
 
-    python -m venv venv
+- Baseline value
+- Accelerations
+- Fetal movement
+- Uterine contractions
+- Light decelerations
+- Severe decelerations
+- Prolonged decelerations
+- Abnormal short-term variability
+- Mean value of short-term variability
+- Percentage of time with abnormal long-term variability
+- Histogram mean
+- Histogram median
+- Histogram variance
 
-Aktifkan environment:
+Target classes:
 
-Windows
+| Label | Condition |
+|------:|-----------|
+| 1 | Normal |
+| 2 | Suspect |
+| 3 | Pathological |
 
-    venv\Scripts\activate
+---
 
-Mac / Linux
+## 📈 Model Evaluation
 
-    source venv/bin/activate
-
-### 3. Install Dependencies
-
-    pip install -r requirements.txt
-
-## Menjalankan Aplikasi
-
-Jalankan aplikasi Flask dengan perintah:
-
-    python app.py
-
-Buka browser dan akses:
-
-    http://127.0.0.1:5000
-
-## Cara Menggunakan Aplikasi
-
-1.  Buka aplikasi di browser
-2.  Masukkan nilai parameter CTG pada form input
-3.  Klik tombol **Predict**
-4.  Sistem akan memproses data menggunakan model machine learning
-5.  Hasil prediksi kondisi kesehatan janin akan ditampilkan
-
-## Evaluasi Model
-
-Model dievaluasi menggunakan beberapa metrik evaluasi untuk mengetahui performa model dalam melakukan klasifikasi kondisi kesehatan janin. Beberapa metrik evaluasi yang digunakan antara lain:
+The models were evaluated using the following performance metrics:
 
 - Accuracy
 - Precision
 - Recall
-- F1-score
+- F1-Score
 - Confusion Matrix
 
-Metrik ini digunakan untuk mengukur seberapa baik model dalam mengklasifikasikan kondisi kesehatan janin ke dalam tiga kategori yaitu **Normal**, **Suspect**, dan **Pathological**.
-
----
-
-## Hasil Evaluasi Model
+These metrics were used to compare the performance of Decision Tree, Naive Bayes, and Random Forest in classifying fetal health conditions.
 
 ### Decision Tree
 
-Berikut merupakan hasil evaluasi model **Decision Tree** yang ditampilkan dalam bentuk classification report dan confusion matrix.
-
-#### Classification Report
-
-![Classification Report Decision Tree](assets/classification_report_dt.png)
-
-#### Confusion Matrix
-
-![Confusion Matrix Decision Tree](assets/confusion_matrix_dt.png)
-
----
+- Classification Report
+- Confusion Matrix
 
 ### Naive Bayes
 
-Berikut merupakan hasil evaluasi model **Naive Bayes** yang ditampilkan dalam bentuk classification report dan confusion matrix.
-
-#### Classification Report
-
-![Classification Report Naive Bayes](assets/classification_report_nb.png)
-
-#### Confusion Matrix
-
-![Confusion Matrix Naive Bayes](assets/confusion_matrix_nb.png)
-
----
+- Classification Report
+- Confusion Matrix
 
 ### Random Forest
 
-Berikut merupakan hasil evaluasi model **Random Forest** yang ditampilkan dalam bentuk classification report dan confusion matrix.
-
-#### Classification Report
-
-![Classification Report Random Forest](assets/classification_report_rf.png)
-
-#### Confusion Matrix
-
-![Confusion Matrix Random Forest](assets/confusion_matrix_rf.png)
+- Classification Report
+- Confusion Matrix
 
 ---
 
-## Perbandingan Performa Model
+## 🏆 Model Comparison
 
-Berdasarkan hasil evaluasi yang dilakukan terhadap tiga algoritma klasifikasi yaitu **Decision Tree**, **Naive Bayes**, dan **Random Forest**, diperoleh bahwa model **Random Forest** memiliki performa yang paling baik dalam melakukan klasifikasi kondisi kesehatan janin.
+The experimental results show that **Random Forest** outperformed Decision Tree and Naive Bayes across all evaluation metrics.
 
-Hal ini dapat dilihat dari nilai **accuracy, precision, recall, dan F1-score** yang lebih tinggi dibandingkan dengan model lainnya. Selain itu, confusion matrix juga menunjukkan bahwa model Random Forest mampu mengklasifikasikan data dengan tingkat kesalahan yang lebih kecil.
-
-Dengan demikian, model **Random Forest** dipilih sebagai model utama yang digunakan dalam aplikasi prediksi kesehatan janin berbasis web ini.
+Random Forest achieved higher **accuracy, precision, recall, and F1-score**, while producing fewer classification errors in the confusion matrix. Therefore, it was selected as the final prediction model for the application.
 
 ---
 
-## Contoh Hasil Prediksi
+## 📷 Prediction Examples
 
-Setelah pengguna memasukkan nilai parameter **Cardiotocography (CTG)** pada halaman prediction, sistem akan memproses data menggunakan model machine learning dan menampilkan hasil klasifikasi kondisi kesehatan janin.
+The application predicts one of three fetal health conditions:
 
-Berikut beberapa contoh hasil prediksi yang dihasilkan oleh sistem.
+- ✅ Normal
+- ⚠️ Suspect
+- 🚨 Pathological
 
-### Prediksi Normal
-
-Hasil prediksi **Normal** menunjukkan bahwa kondisi kesehatan janin berada dalam keadaan baik dan tidak ditemukan indikasi gangguan berdasarkan parameter CTG yang dimasukkan.
-
-![Hasil Prediksi Normal](assets/prediksi_normal.png)
+After users submit CTG parameters, the selected machine learning model processes the input and displays the predicted fetal health condition immediately.
 
 ---
 
-### Prediksi Suspect
+## 🚀 Getting Started
 
-Hasil prediksi **Suspect** menunjukkan bahwa terdapat kemungkinan adanya kondisi yang perlu diperhatikan lebih lanjut. Pada kondisi ini biasanya diperlukan pemantauan tambahan oleh tenaga medis.
+### 1. Clone the repository
 
-![Hasil Prediksi Suspect](assets/prediksi_suspect.png)
+```bash
+git clone https://github.com/username/fetal-health-prediction.git
+cd fetal-health-prediction
+```
+
+### 2. Create a virtual environment (Optional)
+
+```bash
+python -m venv venv
+```
+
+Activate the environment:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the application
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
+
+```text
+http://127.0.0.1:5000
+```
 
 ---
 
-### Prediksi Pathological
+## 🎯 Project Objective
 
-Hasil prediksi **Pathological** menunjukkan bahwa terdapat indikasi kondisi kesehatan janin yang tidak normal sehingga memerlukan perhatian medis lebih lanjut.
-
-![Hasil Prediksi Pathological](assets/prediksi_pathological.png)
+The objective of this project is to develop a web-based machine learning application capable of predicting fetal health conditions from Cardiotocography (CTG) data. By comparing multiple classification algorithms, the project aims to identify the most accurate model for supporting early fetal health assessment.
 
 ---
+
+## 📄 License
+
+This project was developed for educational purposes and portfolio demonstration.
