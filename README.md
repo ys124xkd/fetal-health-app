@@ -1,6 +1,6 @@
 # 👶 Fetal Health Prediction App
 
-Fetal Health Prediction App is a web-based application developed using **Python Flask** to predict fetal health conditions based on **Cardiotocography (CTG)** data. The application utilizes multiple **Machine Learning** algorithms to classify fetal health into **Normal**, **Suspect**, or **Pathological** conditions.
+Fetal Health Prediction App is a web-based application developed using **Python Flask** to predict fetal health conditions based on **Cardiotocography (CTG)** data. The application compares multiple machine learning algorithms to classify fetal health into **Normal**, **Suspect**, and **Pathological** conditions, helping support early fetal health assessment.
 
 ---
 
@@ -8,7 +8,7 @@ Fetal Health Prediction App is a web-based application developed using **Python 
 
 Cardiotocography (CTG) is a medical technique used to monitor fetal well-being during pregnancy by recording fetal heart rate and uterine contractions.
 
-This application enables users to enter CTG parameters through a web interface. The input data is processed using trained machine learning models to predict fetal health conditions, providing an early decision-support tool for healthcare analysis.
+This application allows users to input CTG parameters through a web interface. The entered data is processed using trained machine learning models to predict fetal health conditions. The project also compares several classification algorithms to determine the most accurate model for fetal health prediction.
 
 ---
 
@@ -16,7 +16,7 @@ This application enables users to enter CTG parameters through a web interface. 
 
 - CTG data input through a web interface
 - Automatic fetal health prediction
-- Real-time classification results
+- Real-time prediction results
 - Feature selection using **SelectKBest**
 - Comparison of multiple machine learning algorithms
 - Model performance evaluation
@@ -26,13 +26,13 @@ This application enables users to enter CTG parameters through a web interface. 
 
 ## 🤖 Machine Learning Algorithms
 
-The project implements and compares the following classification algorithms:
+The following classification algorithms were implemented and evaluated:
 
 - Decision Tree
 - Naive Bayes
 - Random Forest
 
-Among these models, **Random Forest** achieved the best overall performance and was selected as the primary prediction model used in the application.
+After comparing all models, **Random Forest** achieved the best overall performance and was selected as the final prediction model.
 
 ---
 
@@ -58,15 +58,30 @@ fetal-health-prediction/
 ├── requirements.txt
 │
 ├── assets/
+│   ├── classification_report_dt.png
+│   ├── classification_report_nb.png
+│   ├── classification_report_rf.png
+│   ├── confusion_matrix_dt.png
+│   ├── confusion_matrix_nb.png
+│   ├── confusion_matrix_rf.png
+│   ├── prediksi_normal.png
+│   ├── prediksi_suspect.png
+│   └── prediksi_pathological.png
+│
 ├── data/
+│   └── dataset.csv
+│
 ├── templates/
+│   ├── index.html
+│   ├── dataset.html
+│   ├── prediksi.html
+│   └── profile.html
 │
 ├── decision_tree_model.pkl
 ├── naive_bayes_model.pkl
 ├── random_forest_model.pkl
 ├── model_accuracies.pkl
 ├── rf_accuracy.pkl
-│
 ├── selected_features.json
 └── selected_features.pkl
 ```
@@ -77,23 +92,23 @@ fetal-health-prediction/
 
 This project uses the **Fetal Health Dataset**, which is based on **Cardiotocography (CTG)** recordings.
 
-The dataset includes features such as:
+The dataset contains several clinical features, including:
 
-- Baseline value
+- Baseline Value
 - Accelerations
-- Fetal movement
-- Uterine contractions
-- Light decelerations
-- Severe decelerations
-- Prolonged decelerations
-- Abnormal short-term variability
-- Mean value of short-term variability
-- Percentage of time with abnormal long-term variability
-- Histogram mean
-- Histogram median
-- Histogram variance
+- Fetal Movement
+- Uterine Contractions
+- Light Decelerations
+- Severe Decelerations
+- Prolonged Decelerations
+- Abnormal Short-Term Variability
+- Mean Value of Short-Term Variability
+- Percentage of Time with Abnormal Long-Term Variability
+- Histogram Mean
+- Histogram Median
+- Histogram Variance
 
-Target classes:
+The target variable consists of three classes:
 
 | Label | Condition |
 |------:|-----------|
@@ -105,7 +120,7 @@ Target classes:
 
 ## 📈 Model Evaluation
 
-The models were evaluated using the following performance metrics:
+The machine learning models were evaluated using the following performance metrics:
 
 - Accuracy
 - Precision
@@ -113,42 +128,23 @@ The models were evaluated using the following performance metrics:
 - F1-Score
 - Confusion Matrix
 
-These metrics were used to compare the performance of Decision Tree, Naive Bayes, and Random Forest in classifying fetal health conditions.
-
-### Decision Tree
-
-- Classification Report
-- Confusion Matrix
-
-### Naive Bayes
-
-- Classification Report
-- Confusion Matrix
-
-### Random Forest
-
-- Classification Report
-- Confusion Matrix
+The evaluation results showed that **Random Forest** outperformed Decision Tree and Naive Bayes by achieving higher accuracy, precision, recall, and F1-score while producing fewer classification errors.
 
 ---
 
-## 🏆 Model Comparison
+## 📸 Application Preview
 
-The experimental results show that **Random Forest** outperformed Decision Tree and Naive Bayes across all evaluation metrics.
+### Home Page
 
-Random Forest achieved higher **accuracy, precision, recall, and F1-score**, while producing fewer classification errors in the confusion matrix. Therefore, it was selected as the final prediction model for the application.
+![Home Page](assets/home.png)
 
----
+### Prediction Page
 
-## 📷 Prediction Examples
+![Prediction Page](assets/prediction.png)
 
-The application predicts one of three fetal health conditions:
+### Prediction Result
 
-- ✅ Normal
-- ⚠️ Suspect
-- 🚨 Pathological
-
-After users submit CTG parameters, the selected machine learning model processes the input and displays the predicted fetal health condition immediately.
+![Prediction Result](assets/prediksi_normal.png)
 
 ---
 
@@ -161,13 +157,13 @@ git clone https://github.com/username/fetal-health-prediction.git
 cd fetal-health-prediction
 ```
 
-### 2. Create a virtual environment (Optional)
+### 2. (Optional) Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment:
+Activate the virtual environment.
 
 **Windows**
 
@@ -181,7 +177,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+### 3. Install the required dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -193,7 +189,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open your browser and visit:
+Open your browser and navigate to:
 
 ```text
 http://127.0.0.1:5000
@@ -203,7 +199,7 @@ http://127.0.0.1:5000
 
 ## 🎯 Project Objective
 
-The objective of this project is to develop a web-based machine learning application capable of predicting fetal health conditions from Cardiotocography (CTG) data. By comparing multiple classification algorithms, the project aims to identify the most accurate model for supporting early fetal health assessment.
+The objective of this project is to develop a web-based machine learning application capable of predicting fetal health conditions using Cardiotocography (CTG) data. By comparing multiple classification algorithms, the project identifies the most effective model for supporting early fetal health assessment.
 
 ---
 
